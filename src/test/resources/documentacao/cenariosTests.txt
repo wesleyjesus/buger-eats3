@@ -1,0 +1,101 @@
+Funcionalidade: 001 - Verificar que estou na pagina inicial do sistema
+        Como entregador
+        Quero certificar que estou na pagina inicial
+        Para que possa acessar ter acesso a opção para realizar cadastro
+
+    CT01: Verificar que estou na pagina inicial
+    Dado que acesso a pagina inicial do sistema
+    Então o sistema exibe a pagina inicial
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Funcionalidade: 002 - Cadastro de entregador no sistema
+        Como entregador
+        Quero realizar meu cadastro no app buger-eats
+        Para que eu possa receber pedidos de entregas pelo app
+
+    CT01: Cadastro com sucesso
+    Dado que eu acesse a tela de cadastro
+    Quando informo os campos obrigatórios
+    E seleciono a opção cadastrar
+    Então o sistema apresenta mensagem cadastro realizado com sucesso.
+	
+	CT02: Validar campos obrigatórios
+    Dado que eu acesse a tela de cadastro
+    Quando seleciono a opção cadastrar
+    Então o sistem exibe os campos que devem ser preenchidos
+    
+    CT03: Cadastro sem informar nome
+    Dado que eu acesse a tela de cadastro
+    Quando informo os campos obrigatórios
+    E não informo o campo nome 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem "É necessário informar o nome"
+
+    CT04: Cadastro sem informar email
+    Dado que eu acesse a tela de cadastro
+    Quando eu não informar o campo email 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem "É necessário informar o email"
+
+    CT05: Cadastro com email invalido
+    Dado que eu acesse a tela de cadastro
+    Quando eu informar um email invalido 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem email invalido
+
+    CT06: Cadastro sem informar cpf
+    Dado que eu acesse a tela de cadastro
+    Quando eu não informar o campo cpf 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem "É necessário informar o CPF"
+
+    CT07: Cadastro com cpf invalido
+    Dado que eu acesse a tela de cadastro
+    Quando eu informar um cpf invalido 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem "Oops! CPF inválido"
+
+    CT08: Cadastro sem informar cep
+    Dado que eu acesse a tela de cadastro
+    Quando eu não informar um cep 
+    E aciono a opção ''Cadastre-se para fazer entregas''
+    Então o sistema exibe a mensagem "É necessário informar o CEP"
+
+    CT09: Cadastro informando mais de um método de entrega
+    Dado que eu acesse a tela de cadastro
+    Quando eu informar mais de um método de entrega 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem "Oops! Selecione ap'nas um método de entrega"
+
+    CT10: Cadastro sem adicionar foto da CNH
+    Dado que eu acesse a tela de cadastro
+    Quando não adiciono a foto da CNH 
+    E seleciono a opção cadastrar
+    Então o sistema exibe a mensagem 'Adicione uma foto da sua CNH'
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Funcionalidade: 003 - Buscar CEP
+
+    CT01: Cadastro com cep valido
+    Dado que eu acesse a tela de cadastro
+    Quando eu informar um cep valido 
+    E seleciono a opção buscar CEP
+    Então os campos rua, bairro e Cidade/UF devem ser preenchidos
+
+    CT02: Cadastro com cep invalido
+    Dado que eu acesse a tela de cadastro
+    Quando eu informar um cep invalido 
+    E seleciono a opção buscar CEP
+    Então os campos rua, bairro e Cidade/UF não devem ser preenchidos
+    E  o sistema exibe a mensagem "É necessário informar um CEP válido"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Funcionalidade: 004 - Voltar para home
+
+    CT01: Selecionar a opção retornar para página inicial
+    Dado que eu acesse a tela de cadastro
+    Quando aciono a opção voltar para home
+    Então o sistema exibe a pagina inicial
